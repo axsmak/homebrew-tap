@@ -5,24 +5,42 @@
 class Aiman < Formula
   desc "Agent Inventory Manager — manage AI agent skills and MCP servers across Claude Code, Cursor, Codex"
   homepage "https://github.com/axsmak/aim"
-  version "0.5.1-rc1"
+  version "0.5.1-rc2"
   license "Apache-2.0"
-  depends_on :macos
 
-  if Hardware::CPU.intel?
-    url "https://github.com/axsmak/aim/releases/download/v0.5.1-rc1/aiman_0.5.1-rc1_darwin_amd64.tar.gz"
-    sha256 "687464fc1fd2fbde21914f0d8517948b5cd5cf662933aa92995429f493ba74db"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/axsmak/aim/releases/download/v0.5.1-rc2/aiman_darwin_amd64.tar.gz"
+      sha256 "b086a5ec31c1891593727a4c0adc57f0b85f772cb10861793696d7ed0a1b6a15"
 
-    define_method(:install) do
-      bin.install "aiman"
+      define_method(:install) do
+        bin.install "aiman"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/axsmak/aim/releases/download/v0.5.1-rc2/aiman_darwin_arm64.tar.gz"
+      sha256 "282c08704eba3144b22a9720f11ac29c5ec141d687d6bf31a920af9c86a77efc"
+
+      define_method(:install) do
+        bin.install "aiman"
+      end
     end
   end
-  if Hardware::CPU.arm?
-    url "https://github.com/axsmak/aim/releases/download/v0.5.1-rc1/aiman_0.5.1-rc1_darwin_arm64.tar.gz"
-    sha256 "43dcbe996c6bf12516a72f431cdae51ca51fca05aa8385df6933c80440a84548"
 
-    define_method(:install) do
-      bin.install "aiman"
+  on_linux do
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/axsmak/aim/releases/download/v0.5.1-rc2/aiman_linux_amd64.tar.gz"
+      sha256 "a1b4785fe0a2dd5b159842257919184c9711f7587fdec948a63e8440136ce1c8"
+      define_method(:install) do
+        bin.install "aiman"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/axsmak/aim/releases/download/v0.5.1-rc2/aiman_linux_arm64.tar.gz"
+      sha256 "aef6c38474743fadcd9ea46fd3ccbbd8d4f072b457783eeff41920995346d8be"
+      define_method(:install) do
+        bin.install "aiman"
+      end
     end
   end
 
