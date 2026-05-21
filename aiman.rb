@@ -5,21 +5,21 @@
 class Aiman < Formula
   desc "Agent Inventory Manager — manage AI agent skills and MCP servers across Claude Code, Cursor, Codex"
   homepage "https://github.com/axsmak/aim"
-  version "0.2.1-rc1"
+  version "0.5.1-rc1"
   license "Apache-2.0"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://github.com/axsmak/aim-beta/releases/download/v0.2.1-rc1/aiman_0.2.1-rc1_darwin_amd64.tar.gz"
-    sha256 "170736fecb2773c99f280d411a43e23a8ca2e6ca27cb8dbfae800940a5f52d6a"
+    url "https://github.com/axsmak/aim/releases/download/v0.5.1-rc1/aiman_0.5.1-rc1_darwin_amd64.tar.gz"
+    sha256 "687464fc1fd2fbde21914f0d8517948b5cd5cf662933aa92995429f493ba74db"
 
     define_method(:install) do
       bin.install "aiman"
     end
   end
   if Hardware::CPU.arm?
-    url "https://github.com/axsmak/aim-beta/releases/download/v0.2.1-rc1/aiman_0.2.1-rc1_darwin_arm64.tar.gz"
-    sha256 "c4120b4f68c78772603f12aa0eb864ab29d6bf6ce9463ad2dda0d1e5baca4339"
+    url "https://github.com/axsmak/aim/releases/download/v0.5.1-rc1/aiman_0.5.1-rc1_darwin_arm64.tar.gz"
+    sha256 "43dcbe996c6bf12516a72f431cdae51ca51fca05aa8385df6933c80440a84548"
 
     define_method(:install) do
       bin.install "aiman"
