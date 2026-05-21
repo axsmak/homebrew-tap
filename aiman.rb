@@ -5,21 +5,21 @@
 class Aiman < Formula
   desc "Agent Inventory Manager — manage AI agent skills and MCP servers across Claude Code, Cursor, Codex"
   homepage "https://github.com/axsmak/aim"
-  version "0.5.1-rc2"
+  version "0.5.2"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/axsmak/aim/releases/download/v0.5.1-rc2/aiman_darwin_amd64.tar.gz"
-      sha256 "b086a5ec31c1891593727a4c0adc57f0b85f772cb10861793696d7ed0a1b6a15"
+      url "https://github.com/axsmak/aim/releases/download/v0.5.2/aiman_darwin_amd64.tar.gz"
+      sha256 "b2b16f275983dbe8aa3349c9baacd37722f124eec27eba78cad6cd1c294178ef"
 
       define_method(:install) do
         bin.install "aiman"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/axsmak/aim/releases/download/v0.5.1-rc2/aiman_darwin_arm64.tar.gz"
-      sha256 "282c08704eba3144b22a9720f11ac29c5ec141d687d6bf31a920af9c86a77efc"
+      url "https://github.com/axsmak/aim/releases/download/v0.5.2/aiman_darwin_arm64.tar.gz"
+      sha256 "305b0565ff1b70c386d5cba6200f4c6ce7b346949598cd0b50df699f09286034"
 
       define_method(:install) do
         bin.install "aiman"
@@ -29,15 +29,15 @@ class Aiman < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/axsmak/aim/releases/download/v0.5.1-rc2/aiman_linux_amd64.tar.gz"
-      sha256 "a1b4785fe0a2dd5b159842257919184c9711f7587fdec948a63e8440136ce1c8"
+      url "https://github.com/axsmak/aim/releases/download/v0.5.2/aiman_linux_amd64.tar.gz"
+      sha256 "01139822e6f6c7c9d3c872c915485b35ac6a3fe315c19ceb7515e8c4e263467c"
       define_method(:install) do
         bin.install "aiman"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/axsmak/aim/releases/download/v0.5.1-rc2/aiman_linux_arm64.tar.gz"
-      sha256 "aef6c38474743fadcd9ea46fd3ccbbd8d4f072b457783eeff41920995346d8be"
+      url "https://github.com/axsmak/aim/releases/download/v0.5.2/aiman_linux_arm64.tar.gz"
+      sha256 "ea55b40a58cbe06a9a27d1f5976860e29134dca12f02310cce83fbd15619d1cb"
       define_method(:install) do
         bin.install "aiman"
       end
