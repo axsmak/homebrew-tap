@@ -11,7 +11,7 @@ class Aiman < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/axsmak/aim/releases/download/v0.5.3/aiman_darwin_amd64.tar.gz"
-      sha256 "cdce9d0c331dd6e39782024eb4c48bb37900547db46e0b48c293d8111dad4e6a"
+      sha256 "1344db2c1f29ea209dc3011197ebae029d4ed4e98e47dbbe226800256b864975"
 
       define_method(:install) do
         bin.install "aiman"
@@ -19,7 +19,7 @@ class Aiman < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/axsmak/aim/releases/download/v0.5.3/aiman_darwin_arm64.tar.gz"
-      sha256 "4e973c58fd55af359fa974ec799828a94cb9ffc0530d3be1ebde17e8662b9847"
+      sha256 "8b1248f1853ed9a800608ffc318d487c2d3d4296cb8130800167f9f28b5b9d52"
 
       define_method(:install) do
         bin.install "aiman"
@@ -30,14 +30,14 @@ class Aiman < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/axsmak/aim/releases/download/v0.5.3/aiman_linux_amd64.tar.gz"
-      sha256 "869a6d13127087c9272af418f3921f2c3fd330b63fa0b107767ef91c8f005f49"
+      sha256 "319ff960c7aed99fa55b1573dfcf68669b58c7893316dff371e4055235da96e6"
       define_method(:install) do
         bin.install "aiman"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/axsmak/aim/releases/download/v0.5.3/aiman_linux_arm64.tar.gz"
-      sha256 "8395eeb25ac15206ae44f875ba407f807625ca2826e5c7a42d5d816b03815ae3"
+      sha256 "50e49a8da4535c16239d290a5b5a422627c671226567d3d3ff376fbb9a8dcd06"
       define_method(:install) do
         bin.install "aiman"
       end
